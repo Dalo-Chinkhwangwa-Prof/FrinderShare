@@ -1,5 +1,5 @@
 package com.britishbroadcast.frindershare.model.data
 
-class FrinderPost(val userId: String, val id: String, val imageUrl: String, val description: String){
+class FrinderPost(var userId: String, val id: String, var imageUrl: String, var description: String){
     constructor(): this("","","","")
 }

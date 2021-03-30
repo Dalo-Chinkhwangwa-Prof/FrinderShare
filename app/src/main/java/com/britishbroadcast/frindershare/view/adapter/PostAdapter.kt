@@ -28,9 +28,8 @@ class PostAdapter(var frinderPosts: List<FrinderPost>): RecyclerView.Adapter<Pos
             post_description.text = frinderPost.description
 
             Glide.with(this)
-                    .setDefaultRequestOptions(RequestOptions().centerCrop())
+                    .setDefaultRequestOptions(RequestOptions().centerInside())
                     .load(frinderPost.imageUrl)
-                    .placeholder(R.drawable.ic_pic)
                     .into(post_imageview)
         }
     }

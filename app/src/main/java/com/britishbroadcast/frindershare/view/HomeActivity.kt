@@ -42,19 +42,15 @@ class HomeActivity : AppCompatActivity() {
 
         }
 
-        viewModel.postThePost(FrinderPost(
-            "111",
-            "11112",
-            "https://miro.medium.com/max/2400/1*Nm4_WwWrQT2eveqwpr6d9g.jpeg",
-            "The journey is the success.."
-        ))
+        add_post.setOnClickListener {
+            val upload = UploadFragment()
+            supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                    .add(R.id.main_frame, upload)
+                    .addToBackStack(upload.tag)
+                    .commit()
+        }
 
-        viewModel.postThePost(FrinderPost(
-            "222",
-            "4312",
-            "https://www.incimages.com/uploaded_files/image/1920x1080/getty_541001004_401513.jpg",
-            "You can't unlock your potential with the wrong key."
-        ))
 
 
     }
